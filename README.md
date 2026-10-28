@@ -3,7 +3,7 @@
 Submission for **Problem Statement 2: Quiz Platform** (Software Division Induction, Programming Club, IIT Indore).
 
 ## 🚀 Live Demo
-[Insert your GitHub Pages / Vercel link here]
+https://kaunnaman.github.io/quiz-platform/
 
 ## ✨ Features
 - **Decoupled Data Architecture:** Quizzes are stored in `questions.js` in a structured schema (`id`, `title`, `questions`, `options`, `answer`, `explanation`). Adding a new quiz requires zero changes to UI or scoring code.
