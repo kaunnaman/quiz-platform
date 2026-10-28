@@ -23,7 +23,7 @@ https://kaunnaman.github.io/quiz-platform/
 ## 💻 Running Locally
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/](https://github.com/)<your-username>/quiz-platform.git
+   git clone [https://github.com/](https://github.com/)kaunnnaman/quiz-platform.git
 
 ## 📸 Screenshots
 ### Start Screen
