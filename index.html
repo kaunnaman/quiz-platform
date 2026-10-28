@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizFlow | Interactive Quiz Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo" id="home-logo" title="Return to Home">
+      <span class="logo-icon">⚡</span>
+      <span>QuizFlow</span>
+    </div>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Theme">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <main class="container">
+    <!-- SCREEN 1: START SCREEN -->
+    <section id="start-screen" class="screen active">
+      <div class="hero">
+        <h1>Test Your Knowledge</h1>
+        <p>Select a topic below to begin. Navigate freely between questions and review your answers at the end.</p>
+      </div>
+
+      <div class="settings-bar">
+        <label class="checkbox-label">
+          <input type="checkbox" id="shuffle-toggle" />
+          Shuffle questions order
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="timer-toggle" checked />
+          Enable countdown timer (3 mins)
+        </label>
+      </div>
+
+      <div id="quiz-list" class="quiz-grid">
+        <!-- Populated dynamically from questions.js -->
+      </div>
+
+      <!-- Leaderboard Panel (Stretch Goal) -->
+      <div class="leaderboard-card">
+        <div class="leaderboard-header">
+          <h2>🏆 Recent High Scores</h2>
+          <button id="clear-scores-btn" class="text-btn">Clear History</button>
+        </div>
+        <div id="leaderboard-body"></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: QUIZ SCREEN -->
+    <section id="quiz-screen" class="screen">
+      <div class="quiz-top-bar">
+        <div>
+          <span id="active-quiz-title" class="badge">Quiz Topic</span>
+          <p id="question-counter" class="counter-text">Question 1 of 10</p>
+        </div>
+        <div id="timer-box" class="timer-badge">
+          ⏱️ <span id="time-display">03:00</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <!-- Question Question & Options -->
+      <div class="question-card">
+        <h2 id="question-text">Question text loads here...</h2>
+        <div id="options-container" class="options-list"></div>
+      </div>
+
+      <!-- Question Palette (Quick Jump) -->
+      <div id="question-palette" class="palette-bar"></div>
+
+      <!-- Navigation Controls -->
+      <div class="quiz-footer">
+        <button id="prev-btn" class="btn btn-secondary">← Previous</button>
+        <div class="footer-right">
+          <button id="clear-selection-btn" class="btn btn-ghost">Clear Choice</button>
+          <button id="next-btn" class="btn btn-primary">Next →</button>
+          <button id="submit-btn" class="btn btn-success hidden">Submit Quiz ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: RESULTS & REVIEW SCREEN -->
+    <section id="result-screen" class="screen">
+      <div class="result-summary-card">
+        <h1>Quiz Completed!</h1>
+        <p id="result-quiz-name" class="subtitle"></p>
+
+        <div class="score-circle">
+          <span id="score-percentage">0%</span>
+          <small id="score-fraction">0 / 10</small>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box correct">
+            <span class="stat-num" id="stat-correct">0</span>
+            <span class="stat-label">Correct</span>
+          </div>
+          <div class="stat-box wrong">
+            <span class="stat-num" id="stat-wrong">0</span>
+            <span class="stat-label">Incorrect</span>
+          </div>
+          <div class="stat-box skipped">
+            <span class="stat-num" id="stat-skipped">0</span>
+            <span class="stat-label">Unanswered</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="restart-quiz-btn" class="btn btn-primary">↻ Retry This Quiz</button>
+          <button id="choose-another-btn" class="btn btn-secondary">☰ Choose Another Quiz</button>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h2>Detailed Answer Review</h2>
+        <div id="review-container" class="review-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
